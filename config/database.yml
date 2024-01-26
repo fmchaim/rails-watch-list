@@ -10,3 +10,9 @@ development:
 test:
   <<: *default
   database: rails-watch-list_test
+
+production:
+  <<: *default
+  database: rails-watch-list_production
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
