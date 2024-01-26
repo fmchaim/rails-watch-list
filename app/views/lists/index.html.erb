@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <h1 class="text-center">My List</h1>
+
+  <ul class="list-group">
+    <% @lists.each do |list| %>
+      <li class="list-group-item">
+        <%= link_to list.name , list_path(list) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to 'Create New List', new_list_path, class: 'btn btn-primary mb-3' %>
+
+</div>

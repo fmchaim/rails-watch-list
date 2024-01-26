@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <h1 class="text-center"><%= @list.name %></h1>
+  <ul class="list-group">
+    <% @bookmarks.each do |bookmark| %>
+      <p><strong>Movie:</strong> <%= bookmark.movie.title %></p>
+      <img src="<%= bookmark.movie.poster_url %>" alt="Movie Image" width="300" height="400">
+      <p><strong>Comment:</strong> <%= bookmark.comment %></p>
+      <%= button_to 'Delete Bookmark', bookmark_path(bookmark), method: :delete, data: { turbo_method: :delete, confirm: 'Are you sure?' } %>
+    <% end %>
+  </ul>
+    <%= link_to 'Back to Lists', lists_path, class: 'btn btn-primary mt-3' %>
+    <%= link_to 'Bookmark', new_list_bookmark_path(list_id: params[:id]), class: 'btn btn-primary mt-3' %>
+</div>

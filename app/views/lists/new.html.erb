@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <h1 class="text-center">New Movie List</h1>
+  <%= simple_form_for @list do |f| %>
+    <div class="form-group">
+      <%= f.input :name, label: 'List Name', input_html: { class: 'form-control' } %>
+    </div>
+    <%= f.button :submit, 'Create List', class: 'btn btn-primary' %>
+  <% end %>
+  <%= link_to 'Back to Lists', lists_path, class: 'btn btn-secondary mt-3' %>
+</div>
